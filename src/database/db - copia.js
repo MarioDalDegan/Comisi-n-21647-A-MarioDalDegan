@@ -14,19 +14,8 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
     dialect: DB_DIALECT,
 });
 
-/*
-const sequelize = new Sequelize( 'ap_mario', 'M4rt1n', 'P4l3rm0', {
-    host: DB_HOST,
-    dialect: 'mysql',
-    define: {
-            timestamps: false,
-            freezeTableName: true
-            }
-        } );
 
-
-*/
-const sequelize = new Sequelize( 'ap_mario', 'M4rt1n', 'P4l3rm0', {
+const sequelize = new Sequelize( 'ap_mario', '***', '***', {
     host:'200.58.105.148',
     dialect:'mysql',
     define: {
