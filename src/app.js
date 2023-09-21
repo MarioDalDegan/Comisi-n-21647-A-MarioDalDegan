@@ -6,24 +6,36 @@ const userRoutes = require('./routes/user.routes.js')
 const morgan = require('morgan')
 const path = require('node:path')
 const app = express()
+const indexRoutes = require('./routes/index.routes.js')
 
+//const archivo_ejs = require('./views/index.ejs')
+
+const PORT = process.env.PORT || 5000
 
 app.use( express.json() )
-app.use
+
+// app.use( archivo_ejs)
+app.use(indexRoutes )
+app.use(userRoutes )
+
+app.use(morgan('dev'))
+app.use(express.urlencoded({extended:false}));
+
+//Plantilla
+app.set("view engine", "ejs") // esto va siempre que se trabaje con plantillas
+
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.set( "views", path.join(__dirname, "views") )
+
+
+app.listen( PORT, () => 
+    console.log( `servidor corriendo en puerto ${PORT}`))
 
 // Test
 TestConnection()
 
-app.use(userRoutes )
-app.use(morgan('dev'))
-app.use(express.urlencoded({extended:false}));
 
-app.set('views', path.join(__dirname, 'views') )
-//Plantilla
-app.set('view engine', 'ejs') // esto va siempre que se trabaje con plantillas
-
-app.listen( 3000, () => 
-    console.log( 'servidor corriendo en puerto 3000'))
 
 /*
 app.get('/', (req, res) =>{
