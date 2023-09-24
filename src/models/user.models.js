@@ -23,7 +23,7 @@ const foroModel = sequelize.define( 'foro', {
     "titulo": Sequelize.STRING,
     "contenido": Sequelize.STRING,
     "link": Sequelize.STRING,
-    "fecha": Sequelize.DATE
+    "fecha": {type:Sequelize.DATE, defaultValue: DataTypes.NOW}
     }, {
         tableName: 'foro'
      });

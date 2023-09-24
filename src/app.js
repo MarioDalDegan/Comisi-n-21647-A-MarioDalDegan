@@ -1,12 +1,13 @@
 const express = require('express')
 const dotenv = require('dotenv')
+const indexRoutes = require('./routes/index.routes.js')
 dotenv.config()
 const {TestConnection} = require('./database/db.js')
 const userRoutes = require('./routes/user.routes.js')
 const morgan = require('morgan')
 const path = require('node:path')
 const app = express()
-const indexRoutes = require('./routes/index.routes.js')
+
 
 //const archivo_ejs = require('./views/index.ejs')
 

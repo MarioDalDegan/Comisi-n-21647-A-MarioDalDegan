@@ -1,0 +1,43 @@
+<%- include('partials/header')%>
+<body>
+
+    <%- include('partials/navbar')%>
+
+    <h1>Pagina desde Foro</h1>
+
+    <!-- On tables -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">titulo</th>
+                <th scope="col">contenido</th>
+                <th scope="col">link</th>
+                <th scope="col">fecha</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <a button type="button" class="btn btn-success" href="/agregar" >Agregar</button></a>
+            <% resultado.forEach((posteo)=>{ %>
+                <tr>
+                    <td class="fs-4 align-middle"><%= posteo.id %></td>
+                    <td class="fs-4 align-middle"><%= posteo.titulo %> </td>
+                    <td class="fs-4 align-middle"><%= posteo.contenido %> </td>
+                    <td class="fs-4 align-middle"><%= posteo.link %> </td>
+                    <td class="fs-4 align-middle"><%= posteo.fecha %></td>
+                    <td>
+                        <a type="button" class="btn btn-primary" href="/modificar/<%= posteo.id %>" >Editar</a>
+                    </td>
+                    
+                    <td>
+                        <a type="button" class="btn btn-danger" href="/eliminar/<%= posteo.id %>" >Eliminar</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+</body>
+
+<%- include('partials/footer')%>

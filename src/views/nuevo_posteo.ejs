@@ -1,0 +1,36 @@
+<%- include("./partials/header")%>
+<body>
+    <%- include("./partials/navbar")%>
+    <h1>Agregando posteo</h1> 
+    <div style="padding: 50px;">
+        <div class="card" style="width: 48rem;">
+            <div class="card-header"> Agrega Posteo </div>
+            
+            <div class="card-body">
+                <form method="post">
+                    <div class="list-group list-group-flush">
+                        <label class="list-group-item">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo">
+                    </div>
+
+                    <div class="list-group list-group-flush">
+                        <li class="list-group-item">Contenido</li>
+                        <input type="text" class="form-control" id="contenido" name="contenido">
+                    </div>
+
+                    <div class="list-group list-group-flush">
+                        <li class="list-group-item">link</li>
+                        <input type="text" class="form-control" id="link" name="link">                    
+                    </div>
+
+                    <button type="submit" class="btn-success" style="width: 12rem;" >Guardar</button>   
+
+                </form>
+            </div>
+        
+        </div>
+    </div>
+   
+</body>
+
+<%- include("./partials/footer")%>
